@@ -1,7 +1,9 @@
 describe("Soduku", () => {
   var soduku;
 
-  beforeEach(() => (soduku = new Soduku()));
+  beforeEach(() => {
+    soduku = new Soduku();
+  });
 
   describe("#initialize", () => {
     it("adds a blank 2 x 2 array", () => {
@@ -13,6 +15,16 @@ describe("Soduku", () => {
     it("adds a number to the array", () => {
       soduku.entry(2, 9);
       expect(soduku.board).toEqual(["", 9, "", ""]);
+    });
+  });
+
+  describe("#errorChecker", () => {
+    it("throws an error if number is duplicate", () => {
+      soduku.entry(2, 9);
+      soduku.entry(1, 9);
+      expect(() => {
+        soduku.errorChecker();
+      }).toThrow(Error, "cannot have duplicate numbers");
     });
   });
 });

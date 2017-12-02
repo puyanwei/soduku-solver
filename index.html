@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta charset="utf-8">
     <script src="src/soduku.js"></script>
     <title>Soduku Solver</title>
   </head>
   <body>
-
+    <div class="box">
+      <div id="box1"></div>
+      <div id="box2"></div>
+      <div id="box3"></div>
+      <!-- <div id="box4"</div>
+      <div id="box5"</div>
+      <div id="box6"</div>
+      <div id="box7"</div>
+      <div id="box8"</div>
+      <div id="box9"</div> -->
+    </div>
+<script>
+$("#box1").click(function(e) {
+  e.preventDefault(); //stop page request
+  var myText = $("#box1").val(); //gets input value
+  $("#text2").html(myText); //sets div to input value
+});
+</script>
   </body>
 </html>

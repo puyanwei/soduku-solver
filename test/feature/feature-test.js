@@ -3,7 +3,7 @@ describe("Soduku", () => {
 
   beforeEach(() => (soduku = new Soduku()));
 
-  describe("Feature Test", () => {
+  describe("Feature Test 2 x 2 Board", () => {
     it("shows the board", () => {
       soduku.entry(1, 1);
       soduku.entry(2, 2);

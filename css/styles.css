@@ -1,0 +1,24 @@
+#box1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+#box2 {
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+#box3 {
+  position: absolute;
+  top: 0px;
+  left: 200px;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
