@@ -21,7 +21,7 @@ describe("Soduku", () => {
   describe("#errorChecker", () => {
     it("throws an error if number is duplicate", () => {
       soduku.entry(2, 9);
-      soduku.entry(4, 2);
+      soduku.entry(3, 9);
       expect(() => {
         soduku.errorChecker();
       }).toThrowError();
