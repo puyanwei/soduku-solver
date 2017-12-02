@@ -21,22 +21,10 @@ describe("Soduku", () => {
   describe("#errorChecker", () => {
     it("throws an error if number is duplicate", () => {
       soduku.entry(2, 9);
-      soduku.entry(1, 9);
+      soduku.entry(4, 2);
       expect(() => {
         soduku.errorChecker();
-      }).toThrow(Error, "cannot have duplicate numbers");
+      }).toThrowError();
     });
   });
 });
-
-// XXX 1 XX XX2
-// XXX XX5 8 XX
-// XX5 XX4 6 XX
-//
-// X4X XX8 13 X
-// X7X XXX X4X
-// X16 3 XX X9X
-//
-// XX1 6 XX 7 XX
-// XX3 5 XX XXX
-// 9 XX XX2 XXX

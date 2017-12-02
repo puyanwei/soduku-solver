@@ -1,7 +1,9 @@
 describe("Soduku", () => {
   var soduku;
 
-  beforeEach(() => (soduku = new Soduku()));
+  beforeEach(() => {
+    soduku = new Soduku();
+  });
 
   describe("Feature Test 2 x 2 Board", () => {
     it("shows the board", () => {
