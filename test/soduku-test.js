@@ -29,11 +29,17 @@ describe("Soduku", () => {
   // });
 
   describe("#errorChecker", () => {
+    it("throws an error if position is already taken", () => {
+      soduku.entry(2, 9);
+      expect(() => {
+        soduku.errorChecker(2, 8);
+      }).toThrow("position already taken");
+    });
     it("throws an error if number is duplicate", () => {
       soduku.entry(2, 9);
       expect(() => {
-        soduku.errorChecker(9);
-      }).toThrow("Cannot have duplicate numbers");
+        soduku.errorChecker(3, 9);
+      }).toThrow("cannot have duplicate numbers");
     });
   });
 });
