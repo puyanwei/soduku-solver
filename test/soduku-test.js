@@ -18,13 +18,22 @@ describe("Soduku", () => {
     });
   });
 
+  // describe("#errorChecker", () => {
+  //   it("throws an error if number is duplicate", () => {
+  //     soduku.entry(2, 9);
+  //     soduku.entry(3, 9);
+  //     expect(() => {
+  //       soduku.errorChecker();
+  //     }).toThrowError();
+  //   });
+  // });
+
   describe("#errorChecker", () => {
     it("throws an error if number is duplicate", () => {
       soduku.entry(2, 9);
-      soduku.entry(3, 9);
       expect(() => {
-        soduku.errorChecker();
-      }).toThrowError();
+        soduku.errorChecker(9);
+      }).toThrow("Cannot have duplicate numbers");
     });
   });
 });
