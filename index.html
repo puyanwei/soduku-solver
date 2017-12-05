@@ -3,27 +3,49 @@
   <head>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta charset="utf-8">
-    <script src="src/soduku.js"></script>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="src/interface.js"></script>
+    <script type="text/javascript" src="src/soduku.js"></script>
+
     <title>Soduku Solver</title>
   </head>
   <body>
-    <div class="box">
-      <div id="box1"></div>
-      <div id="box2"></div>
-      <div id="box3"></div>
-      <!-- <div id="box4"</div>
-      <div id="box5"</div>
-      <div id="box6"</div>
-      <div id="box7"</div>
-      <div id="box8"</div>
-      <div id="box9"</div> -->
-    </div>
-<script>
-$("#box1").click(function(e) {
-  e.preventDefault(); //stop page request
-  var myText = $("#box1").val(); //gets input value
-  $("#text2").html(myText); //sets div to input value
-});
-</script>
+    <table>
+      <colgroup><col><col><col>
+      <colgroup><col><col><col>
+      <colgroup><col><col><col>
+      <tbody>
+       <tr> <td>1 <td>  <td>3 <td>6 <td>  <td>4 <td>7 <td>  <td>9
+       <tr> <td>  <td>2 <td>  <td>  <td>9 <td>  <td>  <td>1 <td>
+       <tr> <td>7 <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>6
+      <tbody>
+       <tr> <td>2 <td>  <td>4 <td>  <td>3 <td>  <td>9 <td>  <td>8
+       <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>
+       <tr> <td>5 <td>  <td>  <td>9 <td>  <td>7 <td>  <td>  <td>1
+      <tbody>
+       <tr> <td>6 <td>  <td>  <td>  <td>5 <td>  <td>  <td>  <td>2
+       <tr> <td>  <td>  <td>  <td>  <td>7 <td>  <td>  <td>  <td>
+       <tr> <td>9 <td>  <td>  <td>8 <td>  <td>2 <td>  <td>  <td>5
+    </table>
+    <br>
+    <form id="input-form">
+      <input id="input-cell" type="text" maxlength="2" size="2"></input>
+      <input type="submit"></input>
+      <form>
+<select id="mySelect">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+</form>
+    </form>
   </body>
 </html>
+
+<!-- document.getElementsByTagName("td")[0].innerHTML = 2 -->

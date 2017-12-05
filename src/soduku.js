@@ -1,7 +1,7 @@
 "use strict";
 
 var Soduku = function() {
-  this.board = ["", "", "", ""];
+  this.board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 };
 
 Soduku.prototype.play = function(position, number) {
@@ -24,8 +24,11 @@ Soduku.prototype._position_taken = function(position, number) {
   }
 };
 
-Soduku.prototype._duplicate = function(position, number) {
-  if (this.board.includes(number)) {
-    throw "cannot have duplicate numbers";
-  }
+Soduku.prototype._convertCols = function() {
+  this.board[0];
 };
+// Soduku.prototype._duplicate = function(position, number) {
+//   if (this.board.includes(number)) {
+//     throw "cannot have duplicate numbers";
+//   }
+// };

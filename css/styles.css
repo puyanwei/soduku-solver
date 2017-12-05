@@ -1,24 +1,15 @@
-#box1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100px;
-  height: 100px;
-  background-color: green;
+table {
+  border-collapse: collapse;
+  font-family: Calibri, sans-serif;
 }
-#box2 {
-  position: absolute;
-  top: 0px;
-  left: 100px;
-  width: 100px;
-  height: 100px;
-  background-color: red;
+colgroup,
+tbody {
+  border: solid medium;
 }
-#box3 {
-  position: absolute;
-  top: 0px;
-  left: 200px;
-  width: 100px;
-  height: 100px;
-  background-color: blue;
+td {
+  border: solid thin;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  padding: 0;
 }
