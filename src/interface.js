@@ -1,4 +1,7 @@
 $(document).ready(() => {
+
+  Soduku = new Soduku();
+
   $("#input-form").submit(event, function() {
     event.preventDefault();
 

@@ -1,34 +1,24 @@
 "use strict";
 
 var Soduku = function() {
-  this.board = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+  //prettier-ignore
+  this.board = [[1,  "",  3,  6, "",  4,  7, "",  9],
+                ["",  2, "", "",  9, "", "",  1, ""],
+                [ 7, "", "", "", "", "", "", "",  6],
+
+                [ 2, "",  4, "",  3, "",  9, "",  8],
+                ["", "", "", "", "", "", "", "", ""],
+                [ 5, "", "",  9, "",  7, "", "",  1],
+
+                [ 6, "", "", "",  5, "", "", "",  2],
+                ["", "", "", "",  7, "", "", "", ""],
+                [ 9, "", "",  8, "",  2, "", "",  5]]
 };
 
-Soduku.prototype.play = function(position, number) {
-  errorChecker(position, number);
-  entry(position, number);
+Soduku.prototype.entry = function(row, column, entry) {
+  this.board[row - 1][column - 1] = entry;
 };
 
-Soduku.prototype.entry = function(position, number) {
-  this.board[position - 1] = number;
+Soduku.prototype.display = function(row, column) {
+  return this.board[row - 1][column - 1];
 };
-
-Soduku.prototype.errorChecker = function(position, number) {
-  _position_taken(position, number);
-  _duplicate(position, number);
-};
-
-Soduku.prototype._position_taken = function(position, number) {
-  if (this.board[position - 1] !== "") {
-    throw "position already taken";
-  }
-};
-
-Soduku.prototype._convertCols = function() {
-  this.board[0];
-};
-// Soduku.prototype._duplicate = function(position, number) {
-//   if (this.board.includes(number)) {
-//     throw "cannot have duplicate numbers";
-//   }
-// };
