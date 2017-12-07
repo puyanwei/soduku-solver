@@ -18,4 +18,21 @@ describe("Soduku", () => {
       expect(soduku.display(4, 4)).toEqual(9);
     });
   });
+
+  describe("#rowChecker", () => {
+    it("checks the rows for duplicate numbers", () => {
+      soduku.entry(1, 2, 9);
+      expect(() => {
+        soduku.rowChecker(1, 9);
+      }).toThrow("row has duplicate number");
+    });
+  });
+
+  describe("#colChecker", () => {
+    it("checks the columns for duplicate numbers", () => {
+      expect(() => {
+        soduku.colChecker(1, 5);
+      }).toThrow("column has duplicate number");
+    });
+  });
 });
