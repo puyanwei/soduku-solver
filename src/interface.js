@@ -1,6 +1,5 @@
 $(document).ready(() => {
-
-  Soduku = new Soduku();
+  soduku = new Soduku();
 
   $("#input-form").submit(event, function() {
     event.preventDefault();
@@ -9,7 +8,7 @@ $(document).ready(() => {
     var dropdownRow = $("#dropdown-row").val();
     var dropdownCol = $("#dropdown-col").val();
 
-    var rows = document.getElementsByTagName("tr");
-    rows[dropdownRow - 1].children[dropdownCol - 1].innerText = dropdownChoice;
+    soduku.rowChecker(dropdownRow, dropdownChoice);
+    soduku.addToBoard(dropdownRow, dropdownCol, dropdownChoice);
   });
 });
