@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $("#input-form").submit(event, () => {
+  $("#input-form").submit(event, function() {
     event.preventDefault();
 
     var dropdownChoice = $("#dropdown-choice").val();
@@ -7,8 +7,6 @@ $(document).ready(() => {
     var dropdownCol = $("#dropdown-col").val();
 
     var rows = document.getElementsByTagName("tr");
-    console.log(rows);
-    console.log(dropdownRow);
     rows[dropdownRow - 1].children[dropdownCol - 1].innerText = dropdownChoice;
   });
 });
