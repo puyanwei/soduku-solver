@@ -14,14 +14,14 @@ describe("Soduku", () => {
 
   describe("#entry", () => {
     it("enters a number into the array", () => {
-      soduku.entry(4, 4, 9);
+      soduku.input(4, 4, 9);
       expect(soduku.display(4, 4)).toEqual(9);
     });
   });
 
   describe("#rowChecker", () => {
     it("checks the rows for duplicate numbers", () => {
-      soduku.entry(1, 2, 9);
+      soduku.input(1, 2, 9);
       expect(() => {
         soduku.rowChecker(1, 9);
       }).toThrow("row has duplicate number");

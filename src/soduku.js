@@ -16,12 +16,12 @@ let Soduku = function() {
 };
 
 Soduku.prototype.action = function(row, column, entry) {
-  entry(row, column, entry);
-  rowChecker(row, entry);
-  colChecker(column, entry);
+  this.rowChecker(row, entry);
+  this.colChecker(column, entry);
+  this.input(row, column, entry);
 };
 
-Soduku.prototype.entry = function(row, column, entry) {
+Soduku.prototype.input = function(row, column, entry) {
   this.board[row - 1][column - 1] = entry;
 };
 
