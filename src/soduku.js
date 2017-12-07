@@ -15,6 +15,12 @@ let Soduku = function() {
                 [ 9, "", "",  8, "",  2, "", "",  5]]
 };
 
+Soduku.prototype.action = function(row, column, entry) {
+  entry(row, column, entry);
+  rowChecker(row, entry);
+  colChecker(column, entry);
+};
+
 Soduku.prototype.entry = function(row, column, entry) {
   this.board[row - 1][column - 1] = entry;
 };
