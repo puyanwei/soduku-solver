@@ -16,14 +16,33 @@ Soduku.prototype.rowChecker = function(row, entry) {
 Soduku.prototype.colChecker = function(column, entry) {
   let columnArray = [];
   for (var i = 0; i < this.rows.length; i++) {
-    console.log(this.rows[i].children[column - 1].innerText);
     columnArray.push(this.rows[i].children[column - 1].innerText);
   }
-  console.log(columnArray);
   if (columnArray.includes(entry)) {
     this.error.innerText = "column has duplicate number";
     throw "column has duplicate number";
   }
+};
+
+Soduku.prototype.innerSquareChecker = function(column, row, entry) {
+  let innerSquare = [];
+  let table = [];
+  for (var i = 0; i < 27; i += 3) {
+    innerSquare.push(this.cells[i + 0].innerText);
+    innerSquare.push(this.cells[i + 1].innerText);
+    innerSquare.push(this.cells[i + 2].innerText);
+    innerSquare.push(this.cells[i + 9].innerText);
+    innerSquare.push(this.cells[i + 10].innerText);
+    innerSquare.push(this.cells[i + 11].innerText);
+    innerSquare.push(this.cells[i + 18].innerText);
+    innerSquare.push(this.cells[i + 19].innerText);
+    innerSquare.push(this.cells[i + 20].innerText);
+    table.push(innerSquare);
+    console.log(table);
+    console.log(innerSquare);
+    innerSquare = [];
+  }
+  // console.log(table);
 };
 
 Soduku.prototype.addToBoard = function(row, column, entry) {

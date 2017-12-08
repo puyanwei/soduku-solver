@@ -6,9 +6,10 @@ describe("Soduku", () => {
   });
 
   describe("#addToBoard", () => {
-    it("enters a number into the array", () => {
+    it("enters a number into the board", () => {
       soduku.addToBoard(4, 4, 9);
-      expect(this.cells[29]).toEqual(9);
+      console.log(document.getElementsByTagName("td"));
+      expect(soduku.cells[29]).toEqual(9);
     });
   });
 

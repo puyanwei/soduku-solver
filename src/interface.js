@@ -10,6 +10,7 @@ $(document).ready(() => {
 
     soduku.rowChecker(dropdownRow, dropdownChoice);
     soduku.colChecker(dropdownCol, dropdownChoice);
+    soduku.innerSquareChecker(dropdownCol, dropdownChoice);
     soduku.addToBoard(dropdownRow, dropdownCol, dropdownChoice);
   });
 });
