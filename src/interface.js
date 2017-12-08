@@ -9,6 +9,7 @@ $(document).ready(() => {
     var dropdownCol = $("#dropdown-col").val();
 
     soduku.rowChecker(dropdownRow, dropdownChoice);
+    soduku.colChecker(dropdownCol, dropdownChoice);
     soduku.addToBoard(dropdownRow, dropdownCol, dropdownChoice);
   });
 });

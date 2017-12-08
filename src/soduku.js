@@ -8,17 +8,20 @@ let Soduku = function() {
 
 Soduku.prototype.rowChecker = function(row, entry) {
   if (this.rows[row - 1].innerText.includes(entry)) {
-    this.error.innerText = "error - row has duplicate number";
+    this.error.innerText = "row has duplicate number";
     throw "row has duplicate number";
   }
 };
 
 Soduku.prototype.colChecker = function(column, entry) {
   let columnArray = [];
-  for (var i = 0; i < this.board.length; i++) {
-    columnArray.push(this.board[i][column - 1]);
+  for (var i = 0; i < this.rows.length; i++) {
+    console.log(this.rows[i].children[column - 1].innerText);
+    columnArray.push(this.rows[i].children[column - 1].innerText);
   }
+  console.log(columnArray);
   if (columnArray.includes(entry)) {
+    this.error.innerText = "column has duplicate number";
     throw "column has duplicate number";
   }
 };
