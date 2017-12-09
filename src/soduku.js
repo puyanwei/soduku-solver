@@ -6,10 +6,10 @@ let Soduku = function() {
   this.error = document.getElementById("error-message");
 };
 
-Soduku.prototype.checkers = function(row, column, entry) {
-  // this.rowChecker(row, entry);
-  // this.colChecker(column, entry);
-  this.squareCheckers(entry);
+Soduku.prototype.checkers = function(row, column, entry, squareIndex) {
+  this.rowChecker(row, entry);
+  this.colChecker(column, entry);
+  this.squareCheckers(squareIndex, entry);
 };
 
 Soduku.prototype.rowChecker = function(row, entry) {
@@ -30,7 +30,8 @@ Soduku.prototype.colChecker = function(column, entry) {
   }
 };
 
-Soduku.prototype.squareCheckers = function(row, column, entry) {
+Soduku.prototype.squareCheckers = function(squareIndex, entry) {
+  var arr = [];
   for (var i = 0; i < 9; i += 3) {
     for (var j = 0; j < 9; j += 3) {
       var square = [];
@@ -39,7 +40,11 @@ Soduku.prototype.squareCheckers = function(row, column, entry) {
           square.push(this.rows[l].children[m].innerText);
         }
       }
-      console.log(square);
+      arr.push(square);
     }
+  }
+  if (arr[squareIndex].includes(entry)) {
+    this.error.innerText = "inner square has duplicate number";
+    throw "inner square has duplicate number";
   }
 };
