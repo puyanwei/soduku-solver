@@ -1,13 +1,29 @@
 $(document).ready(() => {
   soduku = new Soduku();
 
-  $("#input-form").submit(event, function() {
-    event.preventDefault();
+  // $("td").click(function(event) {
+  //   console.log(event.target.cellIndex);
+  // });
 
-    var dropdownChoice = $("#dropdown-choice").val();
-    var dropdownRow = $("#dropdown-row").val();
-    var dropdownCol = $("#dropdown-col").val();
+  $("td").click(function() {
+    this.rows = document.getElementsByTagName("tr");
 
-    soduku.action(dropdownRow, dropdownCol, dropdownChoice);
+    var column = this.cellIndex;
+    var row = this.parentNode.rowIndex;
+
+    this.rows[row].children[column].innerText = 9;
   });
+
+  // $("#input-form").submit(event, function() {
+  //   event.preventDefault();
+  //
+  //   var dropdownChoice = $("#dropdown-choice").val();
+  //   var dropdownRow = $("#dropdown-row").val();
+  //   var dropdownCol = $("#dropdown-col").val();
+  //
+  //   soduku.action(dropdownRow, dropdownCol, dropdownChoice);
+  // });
 });
+// });
+
+// });
