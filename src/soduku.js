@@ -6,6 +6,17 @@ let Soduku = function() {
   this.error = document.getElementById("error-message");
 };
 
+Soduku.prototype.action = function(row, column, entry) {
+  this.checkers(row, column, entry);
+  this.addToBoard(row, column, entry);
+};
+
+Soduku.prototype.checkers = function(row, column, entry) {
+  this.rowChecker(row, entry);
+  this.colChecker(column, entry);
+  this.squareChecker(column, row, entry);
+};
+
 Soduku.prototype.rowChecker = function(row, entry) {
   if (this.rows[row - 1].innerText.includes(entry)) {
     this.error.innerText = "row has duplicate number";
@@ -24,9 +35,8 @@ Soduku.prototype.colChecker = function(column, entry) {
   }
 };
 
-Soduku.prototype.innerSquareChecker = function(column, row, entry) {
+Soduku.prototype.squareChecker = function(column, row, entry) {
   let innerSquare = [];
-  let table = [];
   for (var i = 0; i < 27; i += 3) {
     innerSquare.push(this.cells[i + 0].innerText);
     innerSquare.push(this.cells[i + 1].innerText);
@@ -37,24 +47,14 @@ Soduku.prototype.innerSquareChecker = function(column, row, entry) {
     innerSquare.push(this.cells[i + 18].innerText);
     innerSquare.push(this.cells[i + 19].innerText);
     innerSquare.push(this.cells[i + 20].innerText);
-    table.push(innerSquare);
-    console.log(table);
-    console.log(innerSquare);
-    innerSquare = [];
+    if (innerSquare.includes(entry)) {
+      this.error.innerText = "inner square has duplicate number";
+      throw "inner square has duplicate number";
+      innerSquare = [];
+    }
   }
-  // console.log(table);
 };
 
 Soduku.prototype.addToBoard = function(row, column, entry) {
   this.rows[row - 1].children[column - 1].innerText = entry;
 };
-
-// Soduku.prototype.action = function(row, column, entry) {
-//   this.checkers(row, column, entry);
-//   this.addToBoard(row, column, entry);
-// };
-//
-// Soduku.prototype.checkers = function(row, column, entry) {
-//   this.rowChecker(row, entry);
-//   this.colChecker(column, entry);
-// };

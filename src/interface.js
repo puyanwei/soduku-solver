@@ -8,9 +8,6 @@ $(document).ready(() => {
     var dropdownRow = $("#dropdown-row").val();
     var dropdownCol = $("#dropdown-col").val();
 
-    soduku.rowChecker(dropdownRow, dropdownChoice);
-    soduku.colChecker(dropdownCol, dropdownChoice);
-    soduku.innerSquareChecker(dropdownCol, dropdownChoice);
-    soduku.addToBoard(dropdownRow, dropdownCol, dropdownChoice);
+    soduku.action(dropdownRow, dropdownCol, dropdownChoice);
   });
 });

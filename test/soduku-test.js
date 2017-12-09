@@ -8,7 +8,7 @@ describe("Soduku", () => {
   describe("#addToBoard", () => {
     it("enters a number into the board", () => {
       soduku.addToBoard(4, 4, 9);
-      console.log(document.getElementsByTagName("td"));
+      console.log(soduku.cells[29]);
       expect(soduku.cells[29]).toEqual(9);
     });
   });
