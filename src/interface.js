@@ -6,7 +6,6 @@ $(document).ready(() => {
 
     var row = this.parentNode.rowIndex;
     var column = this.cellIndex;
-    console.log(Math.floor(row / 3), Math.floor(column / 3));
     var entry = $("#dropdown-choice").val();
     var squareIndex = convertToIndex(row, column);
 
