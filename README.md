@@ -2,7 +2,7 @@
 
 This is a self initiated practice exercise for myself to create a working interface for a [Soduku](https://en.wikipedia.org/wiki/Sudoku) puzzle.
 
-[screen shot 2017-12-30 at 16 43 09](https://user-images.githubusercontent.com/14803518/34455887-a22edf8e-ed80-11e7-80c0-0e884a1d291e.png)
+![Alt Text](https://user-images.githubusercontent.com/14803518/34455887-a22edf8e-ed80-11e7-80c0-0e884a1d291e.png)
 
 ## Tech Stack
 
